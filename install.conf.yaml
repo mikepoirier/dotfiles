@@ -8,5 +8,6 @@
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
     ~/.Xresources: Xresources
+    ~/.config/i3/config: i3config
 - shell:
     - [git submodule update --init --recursive, Installing Submodules]
