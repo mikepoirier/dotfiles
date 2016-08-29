@@ -1,0 +1,10 @@
+[user]
+	email = mikepoirier26@gmail.com
+	name = Michael Poirier
+[core]
+	autocrlf = input
+	safecrlf = false
+[alias]
+	st = status
+    co = checkout
+    cane = commit --amend --no-edit

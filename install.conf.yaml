@@ -6,3 +6,4 @@
     ~/.dotfiles: ''
     ~/.vim: vim
     ~/.vimrc: vimrc
+    ~/.gitconfig: gitconfig
