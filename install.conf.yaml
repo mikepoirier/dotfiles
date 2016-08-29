@@ -1,3 +1,8 @@
 - defaults:
         link:
                 relink: true
+- clean: ['~']
+- link:
+    ~/.dotfiles: ''
+    ~/.vim: vim
+    ~/.vimrc: vimrc
