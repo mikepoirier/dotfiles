@@ -1,2 +1,6 @@
 #!/bin/sh
-feh --bg-scale '../resources/background'
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BACKGROUND=$DIR'/../resources/background'
+
+feh --bg-scale $BACKGROUND

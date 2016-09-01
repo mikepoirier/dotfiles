@@ -171,7 +171,7 @@ bindsym $mod+i exec idea
 # finds out, if available)
 bar {
 	position top
-        status_command /home/blindweasel/bin/i3conkybar.sh
+    status_command /home/blindweasel/dotfiles/i3/bin/i3bar.sh
 }
 
 #Startup programs
