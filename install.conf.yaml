@@ -9,5 +9,6 @@
     ~/.gitconfig: gitconfig
     ~/.Xresources: Xresources
     ~/.config/i3: i3
+    ~/.config/yabar: yabar
 - shell:
     - [git submodule update --init --recursive, Installing Submodules]
