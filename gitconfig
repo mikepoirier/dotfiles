@@ -8,3 +8,5 @@
 	st = status
     co = checkout
     cane = commit --amend --no-edit
+[credential]
+	helper = cache
