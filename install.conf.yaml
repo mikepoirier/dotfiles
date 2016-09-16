@@ -10,5 +10,6 @@
     ~/.Xresources: Xresources
     ~/.config/i3: i3
     ~/.config/yabar: yabar
+    ~/.config/networkmanager-dmenu: networkmanager-dmenu
 - shell:
     - [git submodule update --init --recursive, Installing Submodules]
