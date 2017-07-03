@@ -1,0 +1,1 @@
+/home/blindweasel/dotfiles/scripts/nmcli-dmenu

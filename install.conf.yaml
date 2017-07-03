@@ -4,12 +4,20 @@
 - clean: ['~']
 - link:
     ~/.dotfiles: ''
+    ~/.gitconfig: gitconfig
     ~/.vim: vim
     ~/.vimrc: vimrc
-    ~/.gitconfig: gitconfig
+    ~/.xinitrc: xinitrc
     ~/.Xresources: Xresources
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/i3: i3
     ~/.config/yabar: yabar
     ~/.config/networkmanager-dmenu: networkmanager-dmenu
+    ~/.config/polybar: polybar
+    ~/.config/polybar/updates.sh: scripts/updates.sh
+    ~/.config/polybar/system_update.sh: scripts/system_update.sh
+    ~/.config/polybar/nmcli-dmenu.py: scripts/nmcli-dmenu
+    ~/.config/bspwm: bspwm
+    ~/.config/sxhkd: sxhkd
 - shell:
     - [git submodule update --init --recursive, Installing Submodules]

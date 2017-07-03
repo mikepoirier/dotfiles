@@ -1,0 +1,40 @@
+type = internal/network
+interface = wlp8s0
+interval = 0.5
+ping-interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = "%{A1:python ~/.config/polybar/nmcli-dmenu.py:} %essid% (%signal%%) %upspeed%|%downspeed%%{A}"
+label-disconnected = Not Connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = ▁
+ramp-signal-0-font = 2
+ramp-signal-0-foreground = #aaff77
+ramp-signal-1 = ▂
+ramp-signal-1-font = 2
+ramp-signal-1-foreground = #aaff77
+ramp-signal-2 = ▃
+ramp-signal-2-font = 2
+ramp-signal-2-foreground = #aaff77
+ramp-signal-3 = ▄
+ramp-signal-3-font = 2
+ramp-signal-3-foreground = #aaff77
+ramp-signal-4 = ▅
+ramp-signal-4-font = 2
+ramp-signal-4-foreground = #fba922
+ramp-signal-5 = ▆
+ramp-signal-5-font = 2
+ramp-signal-5-foreground = #fba922
+ramp-signal-6 = ▇
+ramp-signal-6-font = 2
+ramp-signal-6-foreground = #ff5555
+ramp-signal-7 = █
+ramp-signal-7-font = 2
+ramp-signal-7-foreground = #ff5555
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = #ff
+animation-packetloss-framerate = 500

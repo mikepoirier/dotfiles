@@ -1,0 +1,414 @@
+[common]
+main-monitor = eDP-1
+bar-width = 100%
+bar-height = 27
+bar-background = #aa000000
+bar-foreground = #ccffffff
+bar-line-color = #aa000000
+bar-padding-right = 4
+line-size = 2
+separator = |
+module-margin = 4
+font-0 = FontAwesome:size=8;0
+font-1 = FontAwesome:size=8;0
+font-2 = MaterialIcons:size=8;0
+font-3 = NotoSans-Regular:size=8;-1
+font-4 = Unifont:size=5;0
+font-5 = Termsynu:size=7;0
+ramp-0 = ▁
+ramp-0-font = 2
+ramp-1 = ▂
+ramp-1-font = 2
+ramp-2 = ▃
+ramp-2-font = 2
+ramp-3 = ▄
+ramp-3-font = 2
+ramp-4 = ▅
+ramp-4-font = 2
+ramp-5 = ▆
+ramp-5-font = 2
+ramp-6 = ▇
+ramp-6-font = 2
+ramp-7 = █
+ramp-7-font = 2
+
+[bar/top]
+monitor = ${common.main-monitor}
+width = ${common.bar-width}
+height = ${common.bar-height}
+background = ${common.bar-background}
+foreground = ${common.bar-foreground}
+line-color = ${common.bar-line-color}
+line-size = ${common.line-size}
+separator = ${common.separator}
+padding-right = ${common.bar-padding-right}
+module-margin = ${common.module-margin}
+
+font-0 = ${common.font-0}
+font-1 = ${common.font-1}
+font-2 = ${common.font-2}
+font-3 = ${common.font-3}
+font-4 = ${common.font-4}
+font-5 = ${common.font-5}
+
+modules-left = powermenu
+modules-center = date
+modules-right = volume spotify updates wireless-network wired-network
+
+tray-position = right
+
+[bar/bottom]
+bottom = true
+monitor = ${common.main-monitor}
+width = ${common.bar-width}
+height = ${common.bar-height}
+background = ${common.bar-background}
+foreground = ${common.bar-foreground}
+separator = ${common.separator}
+padding-right = ${common.bar-padding-right}
+module-margin = ${common.module-margin}
+line-color = ${common.bar-line-color}
+line-size = ${common.line-size}
+
+font-0 = ${common.font-0}
+font-1 = ${common.font-1}
+font-2 = ${common.font-2}
+font-3 = ${common.font-3}
+font-4 = ${common.font-4}
+font-5 = ${common.font-5}
+
+modules-left = bspwm
+modules-right = filesystem temp cpu memory battery
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ffa900
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = term;
+ws-icon-1 = web;
+ws-icon-2 = code;
+ws-icon-3 = music;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-dimmed-underline = ${root.background}
+
+label-focused = %icon%
+label-focused-foreground = #fff
+label-focused-background = #773f3f3f
+label-focused-underline = #c9665e
+label-focused-font = 4
+label-focused-padding = 4
+
+label-occupied = %icon%
+label-occupied-foreground = #dd
+label-occupied-underline = #666
+label-occupied-font = 4
+label-occupied-padding = 4
+
+label-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+label-urgent-font = 4
+label-urgent-padding = 4
+
+label-empty = %icon%
+label-empty-foreground = #55
+label-empty-font = 4
+label-empty-padding = 4
+
+label-monocle = 
+label-monocle-underline = ${module/bspwm.label-focused-underline}
+label-monocle-background = #33ffffff
+label-monocle-padding = 2
+
+label-locked = 
+label-locked-foreground = #bd2c40
+label-locked-underline = ${module/bspwm.label-monocle-underline}
+label-locked-padding = ${module/bspwm.label-monocle-padding}
+
+label-sticky = 
+label-sticky-foreground = #fba922
+label-sticky-underline = ${module/bspwm.label-monocle-underline}
+label-sticky-padding = ${module/bspwm.label-monocle-padding}
+
+label-private = 
+label-private-foreground = #bd2c40
+label-private-underline = ${module/bspwm.label-monocle-underline}
+label-private-padding = ${module/bspwm.label-monocle-padding}
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ${common.ramp-0}
+ramp-coreload-0-font = ${common.ramp-0-font}
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ${common.ramp-1}
+ramp-coreload-1-font = ${common.ramp-1-font}
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ${common.ramp-2}
+ramp-coreload-2-font = ${common.ramp-2-font}
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ${common.ramp-3}
+ramp-coreload-3-font = ${common.ramp-3-font}
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ${common.ramp-4}
+ramp-coreload-4-font = ${common.ramp-4-font}
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ${common.ramp-5}
+ramp-coreload-5-font = ${common.ramp-5-font}
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ${common.ramp-6}
+ramp-coreload-6-font = ${common.ramp-6-font}
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = ${common.ramp-7}
+ramp-coreload-7-font = ${common.ramp-7-font}
+ramp-coreload-7-foreground = #ff5555
+
+[module/date]
+type = internal/date
+date = %%{F#99}%D%%{F-}
+time = %%{F#fff}%r%%{F-}
+label =   %date% %time%
+;date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+format-underline = #2377ff
+
+[module/memory]
+type = internal/memory
+interval = 0.2
+format = <label> <bar-used>
+
+label = RAM
+label-font = 3
+label-foreground = #99
+
+bar-used-width = 30
+bar-used-gradient = true
+bar-used-foreground-0 = #449f3d
+bar-used-foreground-1 = #2f8419
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ed5456
+bar-used-indicator = █
+bar-used-indicator-font = 5
+bar-used-indicator-foreground = #fff
+bar-used-fill = █
+bar-used-fill-font = 5
+bar-used-empty = █
+bar-used-empty-font = 5
+bar-used-empty-foreground = #44
+
+[module/wireless-network]
+type = internal/network
+interface = wlp8s0
+interval = 0.5
+ping-interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = "%{A1:python ~/.config/polybar/nmcli-dmenu.py:} %essid% (%signal%%) %upspeed%|%downspeed%%{A}"
+label-disconnected = Not Connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = ${common.ramp-0}
+ramp-signal-0-font = ${common.ramp-0-font}
+ramp-signal-0-foreground = #ff5555
+ramp-signal-1 = ${common.ramp-1}
+ramp-signal-1-font = ${common.ramp-1-font}
+ramp-signal-1-foreground = #ff5555
+ramp-signal-2 = ${common.ramp-2}
+ramp-signal-2-font = ${common.ramp-2-font}
+ramp-signal-2-foreground = #ff5555
+ramp-signal-3 = ${common.ramp-3}
+ramp-signal-3-font = ${common.ramp-3-font}
+ramp-signal-3-foreground = #fba922
+ramp-signal-4 = ${common.ramp-4}
+ramp-signal-4-font = ${common.ramp-4-font}
+ramp-signal-4-foreground = #fba922
+ramp-signal-5 = ${common.ramp-5}
+ramp-signal-5-font = ${common.ramp-5-font}
+ramp-signal-5-foreground = #aaff77
+ramp-signal-6 = ${common.ramp-6}
+ramp-signal-6-font = ${common.ramp-6-font}
+ramp-signal-6-foreground = #aaff77
+ramp-signal-7 = ${common.ramp-7}
+ramp-signal-7-font = ${common.ramp-7-font}
+ramp-signal-7-foreground = #aaff77
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = #ff
+animation-packetloss-framerate = 500
+
+[module/wired-network]
+type = internal/network
+interface = enp9s0
+interval = 3.0
+
+label-connected =    %{T3}%local_ip%%{T-}
+label-disconnected-foreground = #66
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+label-volume = ""
+label-volume-foreground = ${root.foreground}
+label-muted = muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = │
+bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = #ff
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground =
+
+[module/powermenu]
+type = custom/menu
+
+label-separator = |
+
+label-open = 
+label-close = 
+
+menu-0-0 = Terminate WM
+menu-0-0-foreground = #fba922
+menu-0-0-exec = bspc quit -1
+menu-0-1 = Reboot
+menu-0-1-foreground = #fba922
+menu-0-1-exec = menu-open-1
+menu-0-2 = Power off
+menu-0-2-foreground = #fba922
+menu-0-2-exec = menu-open-2
+
+menu-1-0 = Reboot
+menu-1-0-foreground = #fba922
+menu-1-0-exec = reboot
+menu-1-1 = Cancel
+menu-1-1-foreground = #fba922
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = Power off
+menu-2-0-foreground = #fba922
+menu-2-0-exec = poweroff
+menu-2-1 = Cancel
+menu-2-1-foreground = #fba922
+menu-2-1-exec = menu-open-0
+
+[module/clock]
+type = internal/date
+interval = 2
+date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+
+[module/updates]
+type = custom/script
+interval = 1200
+format = <label>
+format-underline = #dc322f
+exec = ~/.config/polybar/updates.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+click-left = alacritty -e sh ~/.config/polybar/system_update.sh &
+
+[module/spotify]
+type = custom/script
+interval = 1
+format = <label>
+exec = ~/.config/polybar/spotify.sh
+click-left = playerctl play-pause --player=spotify
+
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+mount-1 = /home
+mount-2 = /var
+
+interval = 10
+fixed-values = true
+spacing = 4
+
+[module/temp]
+type = internal/temperature
+
+interval = 0.5
+format = <label> <ramp> 
+format-warn = <label-warn> <ramp>
+label = TEMP %temperature%
+label-warn = TEMP %temperature%
+label-warn-foreground = #f00
+
+thermal-zone = 0
+warn-temperature = 80
+
+ramp-0 = ${common.ramp-0}
+ramp-0-font = ${common.ramp-0-font}
+ramp-0-foreground = #aaff77
+ramp-1 = ${common.ramp-1}
+ramp-1-font = ${common.ramp-1-font}
+ramp-1-foreground = #aaff77
+ramp-2 = ${common.ramp-2}
+ramp-2-font = ${common.ramp-2-font}
+ramp-2-foreground = #aaff77
+ramp-3 = ${common.ramp-3}
+ramp-3-font = ${common.ramp-3-font}
+ramp-3-foreground = #aaff77
+ramp-4 = ${common.ramp-4}
+ramp-4-font = ${common.ramp-4-font}
+ramp-4-foreground = #fba922
+ramp-5 = ${common.ramp-5}
+ramp-5-font = ${common.ramp-5-font}
+ramp-5-foreground = #fba922
+ramp-6 = ${common.ramp-6}
+ramp-6-font = ${common.ramp-6-font}
+ramp-6-foreground = #ff5555
+ramp-7 = ${common.ramp-7}
+ramp-7-font = ${common.ramp-7-font}
+ramp-7-foreground = #ff5555
+
+
